@@ -132,10 +132,17 @@ class CrytekDaeExporter:
                       self.__config.rc_path)
 
     def isExportGroup(self, group):
-        if group.name == "CryExportNode_" + bpy.context.scene.name:
+        gm = group.name.lower()
+        cs = bpy.context.scene.name.lower()
+        if gm == "CryExportNode_" + cs:
             cbPrint("found group '%s'" % (group.name))
             return True
-        elif group.name == bpy.context.scene.name:
+        elif gm == "cry." + cs or \
+             gm == "export." + cs or \
+             gm == "cryexport." + cs or \
+             gm == "cry_" + cs or \
+             gm == "export_" + cs or \
+             gm == "cryexport_":
             cbPrint("mutated group '%s' to new group '%s'" % (group.name, "CryExportNode_" + group.name))
             group.name = "CryExportNode_" + group.name
             return True
