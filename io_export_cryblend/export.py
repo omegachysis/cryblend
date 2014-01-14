@@ -134,7 +134,8 @@ class CrytekDaeExporter:
     def isExportGroup(self, group):
         gm = group.name.lower()
         cs = bpy.context.scene.name.lower()
-        if gm == "CryExportNode_" + cs:
+        
+        if str(gm) == str("cryexportnode_" + cs):
             cbPrint("found group '%s'" % (group.name))
             return True
         elif gm == "cry." + cs or \
@@ -143,11 +144,11 @@ class CrytekDaeExporter:
              gm == "cry_" + cs or \
              gm == "export_" + cs or \
              gm == "cryexport_":
-            cbPrint("mutated group '%s' to new group '%s'" % (group.name, "CryExportNode_" + group.name))
-            group.name = "CryExportNode_" + group.name
+            cbPrint("mutated group '%s' to new group '%s'" % (group.name, "CryExportNode_" + cs))
+            group.name = "CryExportNode_" + cs
             return True
         else:
-            cbPrint("group '%s' is not an export group" % group.name)
+            cbPrint("group '%s' is not an export group %s" % (group.name, cs))
             return False
 
     def __select_all_export_nodes(self):
