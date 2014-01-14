@@ -20,8 +20,9 @@
 # Name:        __init__.py
 # Purpose:     primary python file for cryblend addon
 #
-# Author:      Angelo J. Miner
-# Extended by: Duo Oratar
+# Author:               Angelo J. Miner
+# Extended by:          Duo Oratar
+# Extended again by:    Matthew A. Robinson
 #
 # Created:     23/02/2012
 # Copyright:   (c) Angelo J. Miner 2012
@@ -31,10 +32,10 @@
 
 bl_info = {
     "name": "CryEngine3 Utilities and Exporter",
-    "author": "Angelo J. Miner, Duo Oratar, Mikołaj Milej",
+    "author": "Angelo J. Miner, Duo Oratar, Mikołaj Milej, Matthew A. Robinson",
     "blender": (2, 6, 8),
-    "version": (4, 12, 1),
-    "location": "CryBlend Menu",
+    "version": (1, 4, 12, 1),
+    "location": "CryBlend.Omega Menu",
     "description": "CryEngine3 Utilities and Exporter",
     "warning": "",
     "wiki_url": "https://github.com/travnick/CryBlend/wiki",
@@ -1465,6 +1466,7 @@ class Tools():
         userpref = context.user_preferences
         paths = userpref.filepaths
         layout = self.layout
+        layout.label(text="Improved by Matthew A. Robinson")
         # version number
         layout.label(text='v' + '.'.join(str(n) for n in VERSION))
         # layout.operator("open_donate.wp", icon='FORCE_DRAG')
@@ -1518,7 +1520,7 @@ class Tools():
 
 
 class ToolsMenu(Tools, bpy.types.Menu):
-    bl_label = "CryBlend Menu"
+    bl_label = "CryBlend.Omega"
     bl_idname = "OBJECT_MT_custom_menu"
 
 
