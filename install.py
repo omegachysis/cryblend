@@ -5,13 +5,13 @@ import shutil
 import sys
 import os
 
-C:\Program Files\Blender Foundation\Blender\2.69\scripts\addons
-
 installFolderName = "io_export_cryblend"
 dirLocalInstallation = "io_export_cryblend/"
-dirBlenderAddon = "C:/Program Files/Blender Foundation/Blender/{}/scripts/addons/" + installFolderName
+dirBlenderAddon = "C:/Program Files/Blender Foundation/Blender/{}/scripts/addons/"
 
-def main():    
+def main():
+    global dirBlenderAddon
+    
     print("---------------")
 
     VERSION = sys.version[:5].split(".")
@@ -20,7 +20,6 @@ def main():
         print("You need Python 3 to run this program!")
 
     print("Please your blender version (ex. 2.69)")
-    global dirBlenderAddon
     dirBlenderAddon = dirBlenderAddon.format(input(" :: "))
 
     while True:
@@ -30,18 +29,18 @@ def main():
             input("Press any key to exit...")
             break
         else:
+            print("---------------")
             print("Python cannot recognize a valid Blender installation on your computer.")
             print("Please enter your blender installation directory all the way to the \n" + \
                   "version folder and stop there.")
             direct = input(" :: ")
-            global dirBlenderAddon
             dirBlenderAddon = os.path.join(direct, "scripts/addons/")
         
 
 def install():
     print("Installing...")
     try:
-        shutil.copytree(dirLocalInstallation, dirBlenderAddon)
+        shutil.copytree(dirLocalInstallation, os.path.join(dirBlenderAddon, installFolderName))
         print("Installation complete!")
     except:
         print("Already installed.  Do you wish to replace the current installation with this one? ")
@@ -55,7 +54,7 @@ def install():
 def uninstall():
     print("---------------")
     print("Uninstalling current version...")
-    shutil.rmtree(dirBlenderAddon)
+    shutil.rmtree(os.path.join(dirBlenderAddon, installFolderName))
     print("Uninstallation complete!")
     print("---------------")
 
