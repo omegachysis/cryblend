@@ -19,7 +19,7 @@ def main():
     if VERSION[0] != "3":
         print("You need Python 3 to run this program!")
 
-    print("Please your blender version (ex. 2.69)")
+    print("Please enter your blender version (ex. 2.69)")
     dirBlenderAddon = dirBlenderAddon.format(input(" :: "))
 
     while True:
