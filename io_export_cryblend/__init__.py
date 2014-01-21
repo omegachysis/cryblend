@@ -31,20 +31,17 @@
 
 
 bl_info = {
-    "name": "CryEngine3 Utilities and Exporter",
+    "name": "CryBlend Omega Exporter",
     "author": "Angelo J. Miner, Duo Oratar, Mikołaj Milej, Matthew A. Robinson",
     "blender": (2, 6, 8),
-    "version": (1, 4, 12, 1),
+    "version": (4, 12, 1),
     "location": "CryBlend.Omega Menu",
-    "description": "CryEngine3 Utilities and Exporter",
+    "description": "CRYENGINE Exporter",
     "warning": "",
-    "wiki_url": "https://github.com/travnick/CryBlend/wiki",
-    "tracker_url": "https://github.com/travnick/CryBlend/issues?state=open",
+    "wiki_url": "https://github.com/omegachysis/cryblend/wiki",
+    "tracker_url": "https://github.com/omegachysis/cryblend/issues?state=open",
     "support": 'OFFICIAL',
     "category": "Import-Export"}
-
-# old wiki url: http://wiki.blender.org/
-# index.php/Extensions:2.5/Py/Scripts/Import-Export/CryEngine3
 
 VERSION = bl_info["version"]
 
