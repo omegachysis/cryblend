@@ -33,7 +33,7 @@
 bl_info = {
     "name": "CryBlend Omega Exporter",
     "author": "Angelo J. Miner, Duo Oratar, Mikołaj Milej, Matthew A. Robinson",
-    "blender": (2, 6, 8),
+    "blender": (2, 6, 9),
     "version": (4, 12, 1),
     "location": "CryBlend.Omega Menu",
     "description": "CRYENGINE Exporter",
